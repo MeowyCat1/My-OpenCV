@@ -1,7 +1,7 @@
 import cv2, os
 from PIL import Image
-os.chdir("C:/Users/samht/OneDrive/Documents/Jetlearn Python/OpenCV/lesson6/images")
-path = "C:/Users/samht/OneDrive/Documents/Jetlearn Python/OpenCV/lesson6/images"
+os.chdir("C:/Users/samht/OneDrive/Documents/Jetlearn Python/OpenCV/lesson6/homeworkimages")
+path = "C:/Users/samht/OneDrive/Documents/Jetlearn Python/OpenCV/lesson6/homeworkimages"
 
 def video():
     videoname = "myvideo.mp4"
@@ -15,8 +15,10 @@ def video():
     video = cv2.VideoWriter(videoname, fourcc, 1, (width,height))
     for image in images:
         imagevar = cv2.imread(os.path.join(".", image))
-        print(imagevar.shape)
-        video.write(imagevar)
+        (w, h) = imagevar.shape [:2]
+        inverted = cv2.bitwise_not(imagevar)
+        print(inverted.shape)
+        video.write(inverted)
     cv2.destroyAllWindows()
     video.release()
     print(f"Video created successfully: {videoname}")
