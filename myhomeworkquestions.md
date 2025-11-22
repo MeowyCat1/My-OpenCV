@@ -1,7 +1,7 @@
 # Homework - 15/11/25
 
 1. We use `os.chdir()` to change the directory to the directory of the images so that the code can access the images
-2. We use `f.lower().endswith(('.jpg','.jpeg','.png'))` to make sure that the files the program tries to add are images and not other files, causing issues with the videp.
+2. We use `f.lower().endswith(('.jpg','.jpeg','.png'))` to make sure that the files the program tries to add are images and not other files, causing issues with the video.
 3. So it can find the average of the images and resize them to be the same
 4. Because `cv2.VideoWriter()` requires all images to be the same size, or it won't work
 5. So the resized images don't get mixed up with the original images
