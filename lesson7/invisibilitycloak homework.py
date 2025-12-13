@@ -39,7 +39,9 @@ while raw_video.isOpened():
     red2 = np.array([10, 120, 70])
     red3 = np.array([20, 120, 70])
     red4 = np.array([30, 120, 70])
-    mask = cv2.inRange(hsvimg, red1, red2) | cv2.inRange(hsvimg, red3, red4)
+    green1 = np.array([100, 0, 0])
+    green2 = np.array([180, 100, 100])
+    mask = cv2.inRange(hsvimg, green1, green2)
 
     kernel = np.ones((3,3),np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, iterations= 2, kernel= kernel)
